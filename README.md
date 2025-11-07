@@ -22,19 +22,19 @@ In the evaluation step, metrics such as chrF++, spBLEU, and COMET will be utilis
 
 ## Proposed timeline
 
-# 7-21 November
+### 7-21 November
 
 We estimate that about two weeks will be spent finetuning the model in its different configurations. By creating variants of our finetuned model with different configurations of typology-enhanced embeddings we will be able to investigate what elements may be beneficial and to what degree regarding machine translation.
 
 Some of this time will be spent writing the code to retrieve and organize the internal metadata so that is can be used to train the model.
 
-# 21 - 05 December
+### 21 - 05 December
 
 We estimate the following two weeks will be spent running evaluation metrics across the model variations. This also includes keeping track of the changes made by typology embeddings in aggregate or various languages, categorizing and tabularizing them to ease work in the report stage.
 
 We may begin the report if we complete our evaluations early. Should we find that our models do not show any improvements (Or show degradation in translation quality), we may also spend this time figuring out how we can change our approach to improve our results from baseline.
 
-# 05 - 19 December
+### 05 - 19 December
 
 Finally we will spend the last two weeks analyzing our results and writing the report. We will focus on making a clear and concise report that displays the most significant results and observations from our evaluation data. We expect to have enough time to properly explore not just our results but where our findings could be taken in future research.
 
