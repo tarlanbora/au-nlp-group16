@@ -36,9 +36,9 @@ This repository is organised to make it easy to find the data, metadata, preproc
   - `README.md` — notes specific to the contents of the `smol/` folder and dataset usage.
   - `smoldoc-factuality-ratings.json` — factuality ratings and related metadata used in analysis.
   - `gatitos/` — directory with parallel data files (JSON Lines) split by language pairs.
+  - `smoldoc/` — directory with parallel data files (JSON Lines) split by language pairs.
+  - `smolsent/` — directory with parallel data files (JSON Lines) split by language pairs.
     - Files are named like `en_es.jsonl`, `ace_en.jsonl`, or `en_ace.jsonl`. Each file contains one JSON object per line representing a parallel sentence pair.
     - Convention: filenames use the pattern `<lang1>_<lang2>.jsonl`. Check the file name to infer the source/target order used in that file.
-  - `smoldoc/` — per-language documentation and derived metadata (used to build typology embeddings and other experiments).
-  - `smolsent/` — sentence-level processed data and intermediate files used for training and evaluation.
 
 ## Questions for the TA
