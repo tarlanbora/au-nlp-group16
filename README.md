@@ -14,7 +14,7 @@ The initial work on the project was a review of the SMOL dataset and its publish
 
 An exploratory data analysis will assist us in characterizing SMOL’s linguistic and structural diversity. Some statistics of the data such as token and sentence lengths, vocabulary size, and tokenization behavior across languages were examined. From this, we will derive two continuous features for each language: average sub-tokens per word and type-token ratio. These will later be used as measures to differentiate morphological identities.
 
-Next, the data preprocessing step will ensure consistency and allow for seamless model integration. This step includes the cleaning and the normalization of text, applying mBART’s SentencePiece model for subword tokenization, and encoding each language with its proposed metadata fields. For each language, a typology embedding will be constructed by concatenating a one-hot encoding of script type, an embedding of family/region which will be learned, and the continuous  morphological indicators. These embeddings will be combined with mBART-50’s existing vectors, allowing for the model to consider both structural and typological information in machine translation.
+Next, the data preprocessing step will ensure consistency and allow for seamless model integration. This step includes the cleaning and the normalization of text, applying mBART’s SentencePiece model for subword tokenization, and encoding each language with its proposed metadata fields. For each language, a typology embedding will be constructed by concatenating a one-hot encoding of script type, an embedding of family/region which will be learned, and the continuous morphological indicators. These embeddings will be combined with mBART-50’s existing vectors, allowing for the model to consider both structural and typological information in machine translation.
 
 Fine-tuning will be conducted on SMOL’s multilingual parallel data using mBART-50 as the base model. The training objective will mirror standard sequence-to-sequence translation fine-tuning. However, the difference will be at both encoder and decoder stages, where the introduction of typology-enhanced embeddings will serve as auxiliary inputs. Experiments will compare baseline mBART-50 performance with and without typology embeddings to observe their contribution.
 
@@ -24,11 +24,21 @@ In the evaluation step, metrics such as chrF++, spBLEU, and COMET will be utilis
 
 ## Organization within the team
 
-
 # Appendix
 
 ## Repo organization
 
+This repository is organised to make it easy to find the data, metadata, preprocessing artifacts, and experiment notebooks used in the project. Below is a short guide to the top-level layout and conventions.
+
+- `main.ipynb` — notebook containing project implementation
+- `README.md` — this file (project overview and usage notes).
+- `smol/` — dataset folder, added to .gitignore to prevent upload of the dataset. To download go to https://huggingface.co/datasets/google/smol
+  - `README.md` — notes specific to the contents of the `smol/` folder and dataset usage.
+  - `smoldoc-factuality-ratings.json` — factuality ratings and related metadata used in analysis.
+  - `gatitos/` — directory with parallel data files (JSON Lines) split by language pairs.
+    - Files are named like `en_es.jsonl`, `ace_en.jsonl`, or `en_ace.jsonl`. Each file contains one JSON object per line representing a parallel sentence pair.
+    - Convention: filenames use the pattern `<lang1>_<lang2>.jsonl`. Check the file name to infer the source/target order used in that file.
+  - `smoldoc/` — per-language documentation and derived metadata (used to build typology embeddings and other experiments).
+  - `smolsent/` — sentence-level processed data and intermediate files used for training and evaluation.
+
 ## Questions for the TA
-
-
