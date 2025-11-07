@@ -54,6 +54,17 @@ We want to ensure that every member of the team has a hand in most areas, so tha
 
 ## Repo organization
 
+This repository is organised to make it easy to find the data, metadata, preprocessing artifacts, and experiment notebooks used in the project. Below is a short guide to the top-level layout and conventions.
+
+- `main.ipynb` — notebook containing project implementation
+- `README.md` — this file (project overview and usage notes).
+- `smol/` — dataset folder, added to .gitignore to prevent upload of the dataset. To download go to https://huggingface.co/datasets/google/smol
+  - `README.md` — notes specific to the contents of the `smol/` folder and dataset usage.
+  - `smoldoc-factuality-ratings.json` — factuality ratings and related metadata used in analysis.
+  - `gatitos/` — directory with parallel data files (JSON Lines) split by language pairs.
+  - `smoldoc/` — directory with parallel data files (JSON Lines) split by language pairs.
+  - `smolsent/` — directory with parallel data files (JSON Lines) split by language pairs.
+    - Files are named like `en_es.jsonl`, `ace_en.jsonl`, or `en_ace.jsonl`. Each file contains one JSON object per line representing a parallel sentence pair.
+    - Convention: filenames use the pattern `<lang1>_<lang2>.jsonl`. Check the file name to infer the source/target order used in that file.
+
 ## Questions for the TA
-
-
