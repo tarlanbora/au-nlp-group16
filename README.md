@@ -22,7 +22,29 @@ In the evaluation step, metrics such as chrF++, spBLEU, and COMET will be utilis
 
 ## Proposed timeline
 
+**7 NOV: Start**
+
+**7-21 NOV: Preperation phase**
+Prepare dataset and languages so we are ready for finetuning. Setup repository. Decide on evaluation metrics and load the mBART-50 model so it is ready for finetuning.
+
+**21 NOV - 05 DEC: Training**
+We finetune the model using our data. We may use different embeddings (With or without script type, with our without region, with both, etc.) to generate different fine-tuned models for comparison.
+Use the finetuned model to test and evaluate based on our chosen metrics. Begin preliminary data analysis.
+
+**05-19 DEC: Report**
+Analyze data and draw conclusions / contributions from the work. Write the report and visualize the data and findings with graphs and tables. Finalize milestone 3.
+
+**19 DEC: Delivery**
+
 ## Organization within the team
+
+- Preparing the script vector / family/region embeddings for our chosen languages
+- Fine-tuning the model (Who is responsible for the training phase?)
+- Running test data & evaluation
+- Writing the report
+  - Plotting graphs
+  - Analyzing the results
+- Repo organization
 
 # Appendix
 
