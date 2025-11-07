@@ -14,7 +14,7 @@ The initial work on the project was a review of the SMOL dataset and its publish
 
 An exploratory data analysis will assist us in characterizing SMOL’s linguistic and structural diversity. Some statistics of the data such as token and sentence lengths, vocabulary size, and tokenization behavior across languages were examined. From this, we will derive two continuous features for each language: average sub-tokens per word and type-token ratio. These will later be used as measures to differentiate morphological identities.
 
-Next, the data preprocessing step will ensure consistency and allow for seamless model integration. This step includes the cleaning and the normalization of text, applying mBART’s SentencePiece model for subword tokenization, and encoding each language with its proposed metadata fields. For each language, a typology embedding will be constructed by concatenating a one-hot encoding of script type, an embedding of family/region which will be learned, and the continuous  morphological indicators. These embeddings will be combined with mBART-50’s existing vectors, allowing for the model to consider both structural and typological information in machine translation.
+Next, the data preprocessing step will ensure consistency and allow for seamless model integration. This step includes the cleaning and the normalization of text, applying mBART’s SentencePiece model for subword tokenization, and encoding each language with its proposed metadata fields. For each language, a typology embedding will be constructed by concatenating a one-hot encoding of script type, an embedding of family/region which will be learned, and the continuous morphological indicators. These embeddings will be combined with mBART-50’s existing vectors, allowing for the model to consider both structural and typological information in machine translation.
 
 Fine-tuning will be conducted on SMOL’s multilingual parallel data using mBART-50 as the base model. The training objective will mirror standard sequence-to-sequence translation fine-tuning. However, the difference will be at both encoder and decoder stages, where the introduction of typology-enhanced embeddings will serve as auxiliary inputs. Experiments will compare baseline mBART-50 performance with and without typology embeddings to observe their contribution.
 
@@ -22,7 +22,32 @@ In the evaluation step, metrics such as chrF++, spBLEU, and COMET will be utilis
 
 ## Proposed timeline
 
+# 7-21 November
+
+We estimate that about two weeks will be spent finetuning the model in its different configurations. By creating variants of our finetuned model with different configurations of typology-enhanced embeddings we will be able to investigate what elements may be beneficial and to what degree regarding machine translation.
+
+Some of this time will be spent writing the code to retrieve and organize the internal metadata so that is can be used to train the model.
+
+# 21 - 05 December
+
+We estimate the following two weeks will be spent running evaluation metrics across the model variations. This also includes keeping track of the changes made by typology embeddings in aggregate or various languages, categorizing and tabularizing them to ease work in the report stage.
+
+We may begin the report if we complete our evaluations early. Should we find that our models do not show any improvements (Or show degradation in translation quality), we may also spend this time figuring out how we can change our approach to improve our results from baseline.
+
+# 05 - 19 December
+
+Finally we will spend the last two weeks analyzing our results and writing the report. We will focus on making a clear and concise report that displays the most significant results and observations from our evaluation data. We expect to have enough time to properly explore not just our results but where our findings could be taken in future research.
+
 ## Organization within the team
+
+We want to ensure that every member of the team has a hand in most areas, so that we get the most out of the course. However, to ensure that everything goes according to our rough timeline, we each hold responsibility to certain areas of work.
+
+* Preparing the metadeta and generating per-language features:
+* Fine tuning the model:
+* Running evaluation metrics with the fine-tuned models:
+* Aggregating and tabularizing results:
+* Analysis and discussion of results:
+* Report, repository, misc: 
 
 
 # Appendix
